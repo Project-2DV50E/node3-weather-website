@@ -13,6 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
     // Clear any value that might have existed from a previous search
     messageTwo.textContent = ''
 
+    // Need to remove domain completely, adapt from local to heroku
     fetch('http://localhost:3000/weather?address=' + search.value)
     .then(data => data.json().then((data) => {
         if (data.err) {
