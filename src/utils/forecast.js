@@ -12,7 +12,10 @@ const forecast = (latitude, longitude, cb) => {
         } else if (body.error) {
             cb(body.error, undefined)
         } else {
-            cb(undefined, `${body.daily.data[0].summary}\nIt is currently ${body.currently.temperature} degrees out.\nThere is a ${body.currently.precipProbability}% chance of rain.`)
+            cb(undefined, 
+            `${body.daily.data[0].summary}\nIt is currently ${body.currently.temperature} degrees out.
+            The high today is ${body.daily.data[0].temperatureHigh} degrees with a low of ${body.daily.data[0].temperatureLow} degrees.\n
+            There is a ${body.currently.precipProbability}% chance of rain.`)
         }
     })
 }
