@@ -16,9 +16,9 @@ weatherForm.addEventListener('submit', (e) => {
     // Need to remove domain completely, adapt from local to heroku
     fetch('/weather?address=' + search.value)
     .then(data => data.json().then((data) => {
-        if (data.err) {
+        if (data.error) {
             messageOne.textContent = ''
-            messageOne.textContent = data.err
+            messageOne.textContent = data.error
         } else {
             messageOne.textContent = ''
             messageTwo.textContent = data.location + '\n' + data.forecast
